@@ -18,7 +18,8 @@ RUN mkdir -p /root/.openclaw && echo '{\
       }\
     },\
     "controlUi": {\
-      "allowedOrigins": ["https://openclaw-production-b70b.up.railway.app"]\
+      "allowedOrigins": ["https://openclaw-production-b70b.up.railway.app"],\
+      "dangerouslyDisableDeviceAuth": true\
     }\
   },\
   "models": {\
