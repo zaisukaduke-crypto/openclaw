@@ -12,6 +12,9 @@ RUN mkdir -p /root/.openclaw && echo '{\
       "endpoints": {\
         "chatCompletions": {"enabled": true}\
       }\
+    },\
+    "controlUi": {\
+      "allowedOrigins": ["https://openclaw-production-b70b.up.railway.app"]\
     }\
   },\
   "models": {\
