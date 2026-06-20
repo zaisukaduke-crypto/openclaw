@@ -8,6 +8,10 @@ RUN npm install -g openclaw@2026.6.8
 RUN mkdir -p /root/.openclaw && echo '{\
   "gateway": {\
     "mode": "local",\
+    "auth": {\
+      "mode": "token",\
+      "token": "openclaw"\
+    },\
     "http": {\
       "endpoints": {\
         "chatCompletions": {"enabled": true}\
