@@ -6,7 +6,14 @@ ENV PORT=8080
 RUN npm install -g openclaw@2026.6.8
 
 RUN mkdir -p /root/.openclaw && echo '{\
-  "gateway": {"mode": "local"},\
+  "gateway": {\
+    "mode": "local",\
+    "http": {\
+      "endpoints": {\
+        "chatCompletions": {"enabled": true}\
+      }\
+    }\
+  },\
   "models": {\
     "providers": {\
       "zen": {\
