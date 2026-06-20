@@ -1,6 +1,12 @@
 FROM node:24-slim
-RUN npm install -g openclaw
+
+ENV NODE_ENV=production
+ENV PORT=8080
+
+RUN npm install -g openclaw@2026.6.8
+
 RUN mkdir -p /root/.openclaw && echo '{\
+  "gateway": {"mode": "local"},\
   "models": {\
     "providers": {\
       "zen": {\
@@ -21,6 +27,7 @@ RUN mkdir -p /root/.openclaw && echo '{\
     }\
   }\
 }' > /root/.openclaw/openclaw.json
-ENV PORT=8080
+
 EXPOSE 8080
+
 CMD sh -c "openclaw gateway --port $PORT --bind auto --token openclaw"
