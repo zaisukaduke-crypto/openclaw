@@ -1,13 +1,12 @@
 {
   "$schema": "https://railway.app/railway.schema.json",
   "build": {
-    "builder": "nixpacks",
-    "buildCommand": "pnpm install"
+    "builder": "DOCKERFILE"
   },
   "deploy": {
     "startCommand": "node openclaw.mjs gateway --port $PORT --allow-unconfigured",
     "healthcheckPath": "/",
-    "restartPolicyType": "on-failure",
+    "restartPolicyType": "ON_FAILURE",
     "restartPolicyMaxRetries": 10
   }
 }
