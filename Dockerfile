@@ -30,4 +30,4 @@ RUN mkdir -p /root/.openclaw && echo '{\
 
 EXPOSE 8080
 
-CMD sh -c "echo PORT=\$PORT && openclaw gateway --port 8080 --bind 0.0.0.0 --token openclaw"
+CMD openclaw gateway --port 8080 --bind auto --token openclaw
